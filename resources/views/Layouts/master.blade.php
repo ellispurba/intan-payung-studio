@@ -676,65 +676,36 @@
                                                 <input class="form-check-input" type="checkbox" value="1" />
                                             </label>
                                         </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Actions-->
                                         <div class="d-flex justify-content-end pt-7">
                                             <button type="reset" class="btn btn-sm btn-light fw-bold btn-active-light-primary me-2" data-kt-search-element="preferences-dismiss">Cancel</button>
                                             <button type="submit" class="btn btn-sm fw-bold btn-primary">Save Changes</button>
                                         </div>
-                                        <!--end::Actions-->
                                     </form>
-                                    <!--end::Preferences-->
                                 </div>
-                                <!--end::Menu-->
                             </div>
-                            <!--end::Search-->
                         </div>
-                        <!--begin::Notifications-->
-
-                        <!--end::Notifications-->
-                        <!--begin::Quick links-->
-
-                        <!--end::Quick links-->
-                        <!--begin::Chat-->
-
-                        <!--end::Chat-->
-                        <!--begin::User menu-->
                         <div class="app-navbar-item ms-1 ms-md-3" id="kt_header_user_menu_toggle">
-                            <!--begin::Menu wrapper-->
                             <div class="cursor-pointer symbol symbol-circle symbol-35px symbol-md-45px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                                 <img src="{{asset('admin/assets/media/avatars/300-2.jpg')}}" alt="user" />
                             </div>
-                            <!--begin::User account menu-->
                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
-                                <!--begin::Menu item-->
                                 <div class="menu-item px-3">
                                     <div class="menu-content d-flex align-items-center px-3">
-                                        <!--begin::Avatar-->
                                         <div class="symbol symbol-50px me-5">
                                             <img alt="Logo" src="{{asset('admin/assets/media/avatars/300-2.jpg')}}" />
                                         </div>
-                                        <!--end::Avatar-->
-                                        <!--begin::Username-->
                                         <div class="d-flex flex-column">
                                             <div class="fw-bold d-flex align-items-center fs-5">Max Smith
                                                 <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
                                             </div>
                                             <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">max@kt.com</a>
                                         </div>
-                                        <!--end::Username-->
                                     </div>
                                 </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
                                 <div class="separator my-2"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
                                 <div class="menu-item px-5">
                                     <a href="account/overview.html" class="menu-link px-5">My Profile</a>
                                 </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
                                 <div class="menu-item px-5">
                                     <a href="apps/projects/list.html" class="menu-link px-5">
                                         <span class="menu-text">My Projects</span>
@@ -743,42 +714,28 @@
                                         </span>
                                     </a>
                                 </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
                                 <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
                                     <a href="#" class="menu-link px-5">
                                         <span class="menu-title">My Subscription</span>
                                         <span class="menu-arrow"></span>
                                     </a>
-                                    <!--begin::Menu sub-->
                                     <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                        <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <a href="account/referrals.html" class="menu-link px-5">Referrals</a>
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <a href="account/billing.html" class="menu-link px-5">Billing</a>
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <a href="account/statements.html" class="menu-link px-5">Payments</a>
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <a href="account/statements.html" class="menu-link d-flex flex-stack px-5">Statements
                                                 <span class="ms-2 lh-0" data-bs-toggle="tooltip" title="View your statements">
                                                     <i class="ki-outline ki-information-5 fs-5"></i>
                                                 </span></a>
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
                                         <div class="separator my-2"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3">
                                                 <label class="form-check form-switch form-check-custom form-check-solid">
@@ -787,12 +744,8 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <!--end::Menu item-->
                                     </div>
-                                    <!--end::Menu sub-->
                                 </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
                                 <div class="menu-item px-5">
                                     <a href="account/statements.html" class="menu-link px-5">My Statements</a>
                                 </div>
@@ -902,33 +855,21 @@
                                 <div class="menu-item px-5 my-1">
                                     <a href="account/settings.html" class="menu-link px-5">Account Settings</a>
                                 </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
                                 <div class="menu-item px-5">
                                     <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
                                 </div>
-                                <!--end::Menu item-->
                             </div>
-                            <!--end::User account menu-->
-                            <!--end::Menu wrapper-->
                         </div>
-                        <!--end::User menu-->
                     </div>
-                    <!--end::Navbar-->
-                    <!--begin::Separator-->
                     <div class="app-navbar-separator separator d-none d-lg-flex"></div>
-                    <!--end::Separator-->
                 </div>
-                <!--end::Header container-->
             </div>
-            <!--end::Header-->
-            <!--begin::Wrapper-->
             <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                 <!--begin::Sidebar-->
                 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                     <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-8 pb-2" id="kt_app_sidebar_header">
                         <!--begin::Logo-->
-                        <a href="index.html" class="app-sidebar-logo">
+                        <a href="/dashboard" class="app-sidebar-logo">
                             <!-- <img alt="Logo" src="{{asset('admin/assets/media/logos/demo38.svg')}}" class="h-25px d-none d-sm-inline app-sidebar-logo-default theme-light-show" /> -->
                             <!-- <img alt="Logo" src="{{asset('admin/assets/media/logos/demo38-dark.svg')}}" class="h-20px h-lg-25px theme-dark-show" /> -->
                             <h1 class="text-primary fw-bold mb-0">Intan<span class="text-dark">Studio</span> </h1>
@@ -948,80 +889,67 @@
                                 <!--begin::Heading-->
                                 <div class="menu-item mb-2">
                                     <div class="menu-heading text-uppercase fs-7 fw-bold">Menu</div>
-                                    <!--begin::Separator-->
                                     <div class="app-sidebar-separator separator"></div>
-                                    <!--end::Separator-->
                                 </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu Item-->
-                                <!--end::Menu Item-->
-                                <!--begin::Menu Item-->
-                                <!--end::Menu Item-->
-                                <!--begin::Menu Item-->
-                                <!--end::Menu Item-->
-                                <!--begin::Menu Item-->
                                 <div class="menu-item">
-                                    <!--begin::Menu link-->
                                     <a class="menu-link" href="/dashboard">
-                                        <!--begin::Icon-->
                                         <span class="menu-icon">
                                             <i class="ki-outline ki-home-2 fs-2"></i>
                                         </span>
-                                        <!--end::Icon-->
-                                        <!--begin::Title-->
                                         <span class="menu-title">Dashboard</span>
-                                        <!--end::Title-->
                                     </a>
-                                    <!--end::Menu link-->
                                 </div>
-                                <!--end::Menu Item-->
-                            </div>
-                            <!--end::Teams-->
-                            <!--begin::Sidebar menu-->
-                            <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
-                                <!--begin::Heading-->
-                                <!--end::Heading-->
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-                                    <!--begin:Menu link-->
-                                    <!-- <span class="menu-link">
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/paketFoto">
                                         <span class="menu-icon">
-                                            <i class="ki-outline ki-home-2 fs-2"></i>
+                                            <i class="ki-outline ki-abstract-26 fs-2"></i>
                                         </span>
-                                        <span class="menu-title">Dashboards</span>
-                                    </span> -->
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu sub-->
-
-                                    <!--end:Menu sub-->
+                                        <span class="menu-title">Paket Foto</span>
+                                    </a>
                                 </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-
-                                <!--end:Menu item-->
+                                <div class="menu-item mb-2">
+                                    <div class="menu-heading text-uppercase fs-7 fw-bold">Master Data</div>
+                                    <div class="app-sidebar-separator separator"></div>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/dataPenjadwalan">
+                                        <span class="menu-icon">
+                                            <i class="ki-outline ki-gift fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Data Penjadwalan</span>
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/dataPemesanan">
+                                        <span class="menu-icon">
+                                            <i class="ki-outline ki-abstract-35 fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Data Pemesanan</span>
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="/dataKaryawan">
+                                        <span class="menu-icon">
+                                            <i class="ki-outline ki-briefcase fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Data Karyawan</span>
+                                    </a>
+                                </div>
                             </div>
-                            <!--end::Sidebar menu-->
+                            <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
+                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!--end::Navs-->
                 </div>
-                <!--end::Sidebar-->
-                <!--begin::Main-->
                 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <!--begin::Content wrapper-->
                     <div class="d-flex flex-column flex-column-fluid">
-                        <!--begin::Content-->
-                        @yield('content')
-                        <!--end::Content-->
+                        <div id="kt_app_content" class="app-content flex-column-fluid">
+                            <!--begin::Content-->
+                            @yield('content')
+                            <!--end::Content-->
+                        </div>
                     </div>
                     <!--end::Content wrapper-->
                     <!--begin::Footer-->
@@ -1033,53 +961,15 @@
                                 <span class="text-muted fw-semibold me-1">2024&copy;</span>
                                 <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">IntanStudio</a>
                             </div>
-                            <!--end::Copyright-->
-                            <!--begin::Menu-->
-
-                            <!--end::Menu-->
                         </div>
-                        <!--end::Footer container-->
                     </div>
-                    <!--end::Footer-->
                 </div>
-                <!--end:::Main-->
             </div>
-            <!--end::Wrapper-->
         </div>
-        <!--end::Page-->
     </div>
-    <!--end::App-->
-    <!--begin::Drawers-->
-    <!--begin::Activities drawer-->
-
-    <!--end::Activities drawer-->
-    <!--begin::Chat drawer-->
-
-    <!--end::Chat drawer-->
-    <!--begin::Chat drawer-->
-
-    <!--end::Chat drawer-->
-    <!--end::Drawers-->
-    <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
         <i class="ki-outline ki-arrow-up"></i>
     </div>
-    <!--end::Scrolltop-->
-    <!--begin::Modals-->
-    <!--begin::Modal - Upgrade plan-->
-
-    <!--end::Modal - Upgrade plan-->
-    <!--begin::Modal - View Users-->
-
-    <!--end::Modal - View Users-->
-    <!--begin::Modal - Users Search-->
-
-    <!--end::Modal - Users Search-->
-    <!--begin::Modal - Invite Friends-->
-
-    <!--end::Modal - Invite Friend-->
-    <!--end::Modals-->
-    <!--begin::Javascript-->
     <script>
         var hostUrl = "assets/";
     </script>
@@ -1108,9 +998,9 @@
     <script src="{{asset('admin/assets/js/custom/apps/chat/chat.js')}}"></script>
     <script src="{{asset('admin/assets/js/custom/utilities/modals/upgrade-plan.js')}}"></script>
     <script src="{{asset('admin/assets/js/custom/utilities/modals/users-search.js')}}"></script>
+    <script src="{{asset('admin/assets/js/custom/utilities/modals/create-campaign.js')}}"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
 <!--end::Body-->
-
 </html>
