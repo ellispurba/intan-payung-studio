@@ -23,10 +23,10 @@
     <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
         <div class="container">
             <nav class="navbar navbar-light navbar-expand-lg py-4">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="text-primary fw-bold mb-0">Intan Payung<span class="text-dark">Studio</span> </h1>
+                    <h1 class="text-primary fw-bold mb-0">Intan<span class="text-dark">Studio</span> </h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars text-primary"></span>
@@ -69,9 +69,9 @@
                                 <a href="testimonial.html" class="dropdown-item">Glamour Galery</a>
                             </div>
                         </div>
-                        <a href="service.html" class="nav-item nav-link">Graduation Data</a>
+                        <a href="service.html" class="nav-item nav-link">Graduation</a>
                         <a href="event.html" class="nav-item nav-link">How To Booking</a>
-                        <a href="menu.html" class="nav-item nav-link">Pengambilan Foto</a>
+                        <a href="menu.html" class="nav-item nav-link">Jadwal</a>
                     </div>
                     <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                     <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</a>
@@ -483,7 +483,7 @@
                         <div class="row g-4">
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.1s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-01.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Wedding Safhire</h4>
@@ -495,7 +495,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.2s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-02.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Wedding Honeymoon</h4>
@@ -507,7 +507,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.3s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-03.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Strata Metal</h4>
@@ -519,7 +519,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.4s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-04.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Strata Kanvas</h4>
@@ -531,7 +531,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.5s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-05.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Strata Standart</h4>
@@ -543,7 +543,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.6s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-06.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Magister Kanvas</h4>
@@ -555,7 +555,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.7s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-07.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Magister Metal</h4>
@@ -567,7 +567,7 @@
                             </div>
                             <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.8s">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-08.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Paket Magister Standart</h4>
@@ -583,7 +583,7 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-01.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Argentinian</h4>
@@ -595,7 +595,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-03.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Crispy</h4>
@@ -607,7 +607,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-05.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Sabudana Tikki</h4>
@@ -619,7 +619,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-07.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Blooming</h4>
@@ -631,7 +631,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-08.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Argentinian</h4>
@@ -643,7 +643,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-03.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Lemon</h4>
@@ -655,7 +655,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-02.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Water Drink</h4>
@@ -667,7 +667,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-01.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Salty lemon</h4>
@@ -683,7 +683,7 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-01.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Crispy water</h4>
@@ -695,7 +695,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-02.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Juice</h4>
@@ -707,7 +707,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu-item d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/menu-03.jpg" alt="">
+                                    <img class="flex-shrink-0 img-fluid rounded-circle" src="img/picture.jpg" alt="">
                                     <div class="w-100 d-flex flex-column text-start ps-4">
                                         <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                             <h4>Orange</h4>
@@ -1318,22 +1318,22 @@
                         <h4 class="mb-4">Social Gallery</h4>
                         <div class="row g-2">
                             <div class="col-4">
-                                <img src="img/menu-01.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                                <img src="img/picture.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="img/menu-02.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                                <img src="img/picture.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="img/menu-03.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                                <img src="img/picture.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="img/menu-04.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                                <img src="img/picture.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="img/menu-05.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                                <img src="img/picture.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="img/menu-06.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                                <img src="img/picture.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                             </div>
                         </div>
                     </div>
@@ -1370,15 +1370,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('lib/wow/wow.min.js')}}"></script>
+    <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+    <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+    <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>
