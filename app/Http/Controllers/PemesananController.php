@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pemesanan;
 
 class PemesananController extends Controller
 {
@@ -11,7 +12,8 @@ class PemesananController extends Controller
      */
     public function index()
     {
-        return view('admin.pemesanan');
+        $data = Pemesanan::all();
+        return view('admin.pemesanan', compact('data'));
     }
 
     /**
@@ -27,7 +29,25 @@ class PemesananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Pemesanan::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'tanggal' => $request->tanggal
+        ]);
+
+        if ($data) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Sukses Memasukkan Data',
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal menyimpan data',
+            ]);
+        }
     }
 
     /**
@@ -43,15 +63,44 @@ class PemesananController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Pemesanan::findOrFail($id);
+        return response()->json(['data' => $data], 200);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->pemesanan_id;
+        $data = Pemesanan::find($id);
+
+        if (!$data) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data Penjadwalan tidak ditemukan',
+            ]);
+        }
+         
+        $data->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'tanggal' => $request->tanggal
+        ]);
+
+        if ($data) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Sukses Mengubah Data',
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal Mengubah data',
+            ]);
+        }
     }
 
     /**
@@ -59,6 +108,20 @@ class PemesananController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Pemesanan::find($id);
+
+        if (empty($data)) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data gagal ditemukan'
+            ], 404);
+        }
+
+        $data->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses Melakukan delete Data',
+        ]);
     }
 }

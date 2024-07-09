@@ -34,6 +34,9 @@
                             <td>{{$item->harga}}</td>
                             <td>{{$item->kategori}}</td>
                             <td>{{$item->deskripsi}}</td>
+                            <td><a href="javascript:void(0)" onclick="edit('{{ $item->paket_id }}')"><i class="fa fa-edit text-info"></i></a>
+                                <a href="javascript:void(0)" onclick="hapus('{{ $item->paket_id }}')" style="color: red;"><i class="fas fa-trash text-danger"></i></a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -54,7 +57,7 @@
             </div>
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <form class="form" action="" method="POST" id="formAdd" enctype="multipart/form-data">
-                    <input type="hidden" name="berita_id" value="">
+                    <input type="hidden" name="paket_id" value="">
                     <div class="mb-13 text-center">
                         <h1 class="mb-3" id="m_modal_6_title">Data Paket Foto</h1>
                     </div>
@@ -129,7 +132,7 @@
         }
 
         var formData = new FormData();
-        formData.append('id', $('[name="id"]').val());
+        formData.append('paket_id', $('[name="paket_id"]').val());
         formData.append('nama', $('[name="nama"]').val());
         formData.append('harga', $('[name="harga"]').val());
         formData.append('kategori', $('[name="kategori"]').val());
@@ -169,8 +172,7 @@
     function edit(id) {
         method = 'edit';
         resetForm(); 
-
-        $('#exampleModalLongTitle').html("Edit Karyawan"); 
+        $('#m_modal_6_title').html("Edit Paket Foto"); 
 
         $.ajax({
             url: "{{ url('paket/edit') }}/" + id,
@@ -179,71 +181,64 @@
             success: function(data) {
                 if (data.data) {
                     $('#formAdd')[0].reset();
-                    $('[name="karyawan_id"]').val(data.data.karyawan_id);
+                    $('[name="paket_id"]').val(data.data.paket_id);
                     $('[name="nama"]').val(data.data.nama);
-                    $('[name="alamat"]').val(data.data.alamat);
-                    $('[name="no_hp"]').val(data.data.no_hp);
-                    $('[name="divisi"]').val(data.data.divisi);
-                    $('[name="anggota_koperasi"]').each(function() {
-                        if ($(this).val() == data.data.is_anggota_koperasi) {
-                            $(this).prop('checked', true);
-                        }
-                    });
-                    $('.m-select2').select2({width : '100%'});
+                    $('[name="harga"]').val(data.data.harga);
+                    $('[name="deskripsi"]').val(data.data.deskripsi);
+                    $('[name="kategori"]').val(data.data.kategori).change();
+
                     $('#m_modal_6').modal('show'); 
                 } else {
-                    swal("Oops", "Gagal mengambil data!", "error");
+                    Swal.fire("Oops", "Gagal mengambil data!", "error");
                 }
                 mApp.unblockPage();
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 mApp.unblockPage();
-                alert('Error get data from ajax');
+                Swal.fire("Error", "Gagal mengambil data dari server!", "error");
             }
         });
     }
     function hapus(id) {
-        swal({
+        Swal.fire({
             title: "Apakah anda yakin?",
             text: "Anda yakin ingin hapus data ini?",
-            type: "warning",
+            icon: "warning",
             showCancelButton: true,
-            closeOnConfirm: false,
             confirmButtonText: "<span><i class='flaticon-interface-1'></i><span>Ya, Hapus!</span></span>",
             confirmButtonClass: "btn btn-danger m-btn m-btn--pill m-btn--icon",
             cancelButtonText: "<span><i class='flaticon-close'></i><span>Batal Hapus</span></span>",
-            cancelButtonClass: "btn btn-metal m-btn m-btn--pill m-btn--icon"
-        }).then(function(e) {
-            if (e.value) {
-                mApp.blockPage({ //block page
-                    overlayColor: "#000000",
-                    type: "loader",
-                    state: "primary",
-                    message: "Please wait..."
-                });
-
+            cancelButtonClass: "btn btn-metal m-btn m-btn--pill m-btn--icon",
+            customClass: {
+                confirmButton: 'btn btn-danger m-btn m-btn--pill m-btn--icon',
+                cancelButton: 'btn btn-metal m-btn m-btn--pill m-btn--icon'
+            }
+        }).then(function(result) {
+            if (result.isConfirmed) {
                 $.ajax({
-                    url: "{{ url('paket') }}/" + id, 
-                    type: "DELETE", 
+                    url: "{{ url('paket') }}/" + id,
+                    type: "DELETE",
                     data: {
-                        _token: '{{ csrf_token() }}' 
+                        _token: '{{ csrf_token() }}'
                     },
                     dataType: "JSON",
                     success: function(data) {
-                        if (data.status == true) {
-                            swal("Berhasil..", "Data Anda berhasil dihapus", "success");
-                            $('.m_datatable').mDatatable().reload();
-                            $('.m_datatable2').mDatatable().reload();
+                        if (data.status === true) {
+                            Swal.fire({
+                                title: "Berhasil..",
+                                text: "Data Anda berhasil dihapus",
+                                icon: "success"
+                            }).then(function() {
+                                location.reload();
+                            });
                         } else {
-                            swal("Oops", "Data gagal dihapus!", "error");
+                            Swal.fire("Oops", "Data gagal dihapus!", "error");
                         }
-                        mApp.unblockPage();
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
-                        mApp.unblockPage();
-                        swal("Oops", "Data gagal dicancel!", "error");
+                        Swal.fire("Oops", "Data gagal dihapus!", "error");
                     }
-                })
+                });
             }
         });
     }

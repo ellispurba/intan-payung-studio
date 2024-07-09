@@ -70,15 +70,51 @@ class PaketController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Paket::findOrFail($id);
+        return response()->json(['data' => $data], 200);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->paket_id;
+        $data = Paket::find($id);
+
+        if (!$data) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data Paket tidak ditemukan',
+            ]);
+        }
+         
+        $data->update([
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'kategori' => $request->kategori,
+            'deskripsi' => $request->deskripsi
+        ]);
+
+        if ($request->hasFile('foto')) {
+            $gambarPath = $request->file('foto')->store('', 'public'); 
+            $foto = $gambarPath;
+            $data->update([
+                'foto' => $foto
+            ]);
+        }
+
+        if ($data) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Sukses Mengubah Data',
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal Mengubah data',
+            ]);
+        }
     }
 
     /**
@@ -86,6 +122,20 @@ class PaketController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Paket::find($id);
+
+        if (empty($data)) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data gagal ditemukan'
+            ], 404);
+        }
+
+        $data->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses Melakukan delete Data',
+        ]);
     }
 }
