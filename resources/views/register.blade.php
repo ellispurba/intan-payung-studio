@@ -70,7 +70,7 @@
                         <a href="/" class="nav-item nav-link" onclick="setActive(this)">Cek Pemesanan</a>
                         <a href="/" class="nav-item nav-link" onclick="setActive(this)">Kontak</a>
                     </div>
-                    <a href="{{route('portal.index')}}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Masuk</a>
+                    <a href="{{route('auth.index')}}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Masuk</a>
                 </div>
             </nav>
         </div>
@@ -88,13 +88,16 @@
                         <h1 class="display-5 mb-0">Belum punya akun, silakan daftar</h1>
                     </div>
                     <div class="col-md-12 col-lg-12">
-                        <form>
-                            <input type="text" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Nama Lengkap">
-                            <input type="email" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Email">
-                            <input type="password" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Password">
+                        <form action="{{route('auth.postRegister')}}" method="POST">
+                            @csrf
+                            <input type="text" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Nama Lengkap" name="name">
+                            <input type="text" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Username" name="username">
+                            <input type="number" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="No HP" name="no_hp">
+                            <input type="email" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Email" name="email">
+                            <input type="password" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Password" name="password">
                             <div class="d-flex">
                                 <button class=" btn btn-primary form-control p-2 border-primary bg-primary m-2" type="submit" style="width:20%">Daftar</button>
-                                <p class="m-4">Sudah Punya Akun? <a href="{{route('portal.index')}}"> Login</a></p>
+                                <p class="m-4">Sudah Punya Akun? <a href="{{route('auth.index')}}"> Login</a></p>
                             </div>
                         </form>
                     </div>

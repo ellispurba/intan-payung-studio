@@ -8,16 +8,17 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GaleriController;
 
-Route::get('/', function () {
-    return view('landingPage.index');
-});
+// Route::get('/', function () {
+//     return view('landingPage.index');
+// });
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 
-Route::prefix('landingPage')->group(function () {
+Route::prefix('/')->group(function () {
     Route::get('/', [LandingPageController::class, 'index'])->name('landingPage.index');
 });
 
@@ -27,6 +28,14 @@ Route::prefix('paket')->group(function () {
     Route::get('/edit/{id}', [PaketController::class, 'edit'])->name('paket.edit');
     Route::post('/update', [PaketController::class, 'update'])->name('paket.update');
     Route::delete('/{id}', [PaketController::class, 'destroy'])->name('paket.destroy');
+});
+
+Route::prefix('galeri')->group(function () {
+    Route::get('/', [GaleriController::class, 'index'])->name('galeri.index');
+    Route::post('/store', [GaleriController::class, 'store'])->name('galeri.store');
+    Route::get('/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
+    Route::post('/update', [GaleriController::class, 'update'])->name('galeri.update');
+    Route::delete('/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 });
 
 Route::prefix('penjadwalan')->group(function () {
@@ -53,7 +62,11 @@ Route::prefix('karyawan')->group(function () {
     Route::delete('/{id}', [KaryawanController::class, 'destroy'])->name('karyawan.destroy');
 });
 
-Route::prefix('portal')->group(function () {
-    Route::get('/', [AuthController::class, 'index'])->name('portal.index');
-    Route::get('/register', [AuthController::class, 'register'])->name('portal.register');
+Route::prefix('auth')->group(function () {
+    Route::get('/', [AuthController::class, 'index'])->name('auth.index');
+    Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::post('/postRegister', [AuthController::class, 'postRegister'])->name('auth.postRegister');
+    Route::post('/postLogin', [AuthController::class, 'postLogin'])->name('auth.postLogin');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });

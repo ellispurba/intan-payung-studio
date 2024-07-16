@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Galeri;
 
 class LandingPageController extends Controller
 {
@@ -11,7 +12,8 @@ class LandingPageController extends Controller
      */
     public function index()
     {
-         return view('landingPage.index');
+        $data=Galeri::all();
+        return view('landingPage.index',compact('data'));
     }
 
     /**

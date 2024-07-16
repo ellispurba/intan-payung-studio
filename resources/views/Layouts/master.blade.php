@@ -100,7 +100,7 @@
                                 <div class="separator my-2"></div>
                                 
                                 <div class="menu-item px-5">
-                                    <a href="/" class="menu-link px-5">Sign Out</a>
+                                    <a href="{{url('/')}}" class="menu-link px-5">Sign Out</a>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +142,10 @@
                                         </span>
                                         <span class="menu-title">Dashboard</span>
                                     </a>
+                                </div><br>
+                                <div class="menu-item mb-2">
+                                    <div class="menu-heading text-uppercase fs-7 fw-bold">Master Data</div>
+                                    <div class="app-sidebar-separator separator"></div>
                                 </div>
                                 <div class="menu-item">
                                     <a class="menu-link" href="{{route('paket.index')}}">
@@ -150,10 +154,6 @@
                                         </span>
                                         <span class="menu-title">Paket Foto</span>
                                     </a>
-                                </div>
-                                <div class="menu-item mb-2">
-                                    <div class="menu-heading text-uppercase fs-7 fw-bold">Master Data</div>
-                                    <div class="app-sidebar-separator separator"></div>
                                 </div>
                                 <div class="menu-item">
                                     <a class="menu-link" href="{{route('penjadwalan.index')}}">
@@ -177,6 +177,14 @@
                                             <i class="ki-outline ki-briefcase fs-2"></i>
                                         </span>
                                         <span class="menu-title">Data Karyawan</span>
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="{{route('galeri.index')}}">
+                                        <span class="menu-icon">
+                                            <i class="fas fa-images"></i>
+                                        </span>
+                                        <span class="menu-title">Data Galeri</span>
                                     </a>
                                 </div>
                             </div>

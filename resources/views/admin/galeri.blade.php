@@ -5,11 +5,11 @@
         <!--begin::Header-->
         <div class="card-header border-0 pt-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fw-bold fs-3 mb-1">Data Paket Foto</span>
+                <span class="card-label fw-bold fs-3 mb-1">Data Galeri</span>
             </h3>
             <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Klik untuk tambah paket">
                 <button type="button" class="btn btn-primary er fs-6 px-4 py-2" onclick="add_ajax()">
-                    <i class="ki-outline ki-plus fs-2"></i> Tambah Paket
+                    <i class="ki-outline ki-plus fs-2"></i> Tambah Galeri
                 </button>
             </div>
         </div>
@@ -19,10 +19,7 @@
                     <thead>
                         <tr class="fw-bold text-muted">
                             <th>No</th>
-                            <th>Nama Paket</th>
-                            <th>Harga</th>
                             <th>Kategori</th>
-                            <th>Deskripsi</th>
                             <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
@@ -31,10 +28,7 @@
                         @foreach ($data as $item)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$item->nama}}</td>
-                            <td>{{$item->harga}}</td>
                             <td>{{$item->kategori}}</td>
-                            <td>{{$item->deskripsi}}</td>
                             <td><img src="{{ Storage::url($item->foto) }}" alt="product" width="50" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#viewImage{{ $item->galeri_id }}">
                                 <div class="modal fade" id="viewImage{{ $item->galeri_id }}" tabindex="-1" aria-labelledby="viewImageModalLabel{{ $item->galeri_id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
@@ -50,8 +44,8 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="javascript:void(0)" onclick="edit('{{ $item->paket_id }}')"><i class="fa fa-edit text-info"></i></a>
-                                <a href="javascript:void(0)" onclick="hapus('{{ $item->paket_id }}')" style="color: red;"><i class="fas fa-trash text-danger"></i></a>
+                            <td><a href="javascript:void(0)" onclick="edit('{{ $item->galeri_id }}')"><i class="fa fa-edit text-info"></i></a>
+                                <a href="javascript:void(0)" onclick="hapus('{{ $item->galeri_id }}')" style="color: red;"><i class="fas fa-trash text-danger"></i></a>
                             </td>
                         </tr>
                         @endforeach
@@ -73,21 +67,9 @@
             </div>
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <form class="form" action="" method="POST" id="formAdd" enctype="multipart/form-data">
-                    <input type="hidden" name="paket_id" value="">
+                    <input type="hidden" name="galeri_id" value="">
                     <div class="mb-13 text-center">
-                        <h1 class="mb-3" id="m_modal_6_title">Data Paket Foto</h1>
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                            <span class="required">Nama Paket</span>
-                        </label>
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Paket" name="nama" />
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                            <span class="required">Harga</span>
-                        </label>
-                        <input type="number" class="form-control form-control-solid" placeholder="Masukkan Harga" name="harga" />
+                        <h1 class="mb-3" id="m_modal_6_title">Data Galeri</h1>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
@@ -103,15 +85,9 @@
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                            <span class="required">Deskripsi</span>
-                        </label>
-                        <textarea name="deskripsi" class="form-select form-select-solid"  placeholder="Deskripsi" data-parsley-required="true"></textarea>
-                    </div>
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Foto</span>
                         </label>
-                        <input type="file" class="form-control form-control-solid"  name="foto" />
+                        <input type="file" class="form-control form-control-solid" placeholder="Masukkan Foto" name="foto" />
                     </div>
                     <div class="text-center">
                         <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Close</button>
@@ -134,7 +110,7 @@
     function add_ajax() {
         method = 'add';
         resetForm();
-        $('#m_modal_6_title').html("Tambah Paket");
+        $('#m_modal_6_title').html("Tambah Galeri");
         $('#m_form_1_msg').hide();
         $('#m_modal_6').modal('show');
     }
@@ -142,17 +118,14 @@
         let url;
 
         if (method === 'add') {
-            url = "{{ route('paket.store') }}";
+            url = "{{ route('galeri.store') }}";
         } else {
-            url = "{{ route('paket.update') }}";
+            url = "{{ route('galeri.update') }}";
         }
 
         var formData = new FormData();
-        formData.append('paket_id', $('[name="paket_id"]').val());
-        formData.append('nama', $('[name="nama"]').val());
-        formData.append('harga', $('[name="harga"]').val());
+        formData.append('galeri_id', $('[name="galeri_id"]').val());
         formData.append('kategori', $('[name="kategori"]').val());
-        formData.append('deskripsi', $('[name="deskripsi"]').val());
         formData.append('foto', $('[name="foto"]')[0].files[0]);
         formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
         
@@ -188,19 +161,16 @@
     function edit(id) {
         method = 'edit';
         resetForm(); 
-        $('#m_modal_6_title').html("Edit Paket Foto"); 
+        $('#m_modal_6_title').html("Edit Galeri"); 
 
         $.ajax({
-            url: "{{ url('paket/edit') }}/" + id,
+            url: "{{ url('galeri/edit') }}/" + id,
             type: "GET",
             dataType: "JSON",
             success: function(data) {
                 if (data.data) {
                     $('#formAdd')[0].reset();
-                    $('[name="paket_id"]').val(data.data.paket_id);
-                    $('[name="nama"]').val(data.data.nama);
-                    $('[name="harga"]').val(data.data.harga);
-                    $('[name="deskripsi"]').val(data.data.deskripsi);
+                    $('[name="galeri_id"]').val(data.data.galeri_id);
                     $('[name="kategori"]').val(data.data.kategori).change();
 
                     $('#m_modal_6').modal('show'); 
@@ -232,7 +202,7 @@
         }).then(function(result) {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: "{{ url('paket') }}/" + id,
+                    url: "{{ url('galeri') }}/" + id,
                     type: "DELETE",
                     data: {
                         _token: '{{ csrf_token() }}'

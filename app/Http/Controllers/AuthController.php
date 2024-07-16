@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -13,10 +16,47 @@ class AuthController extends Controller
     {
         return view('login');
     }
+    public function login()
+    {
+        return view('login');
+    }
 
     public function register()
     {
         return view('register');
+    }
+    public function postRegister(Request $request)
+    {
+        $data = new User;
+        
+        $data->name = $request->name;
+        $data->username = $request->username;
+        $data->email = $request->email;
+        $data->password = Hash::make($request->input('password'));
+        $data->no_hp = $request->no_hp;
+        $data->role = 'user';
+
+        $post = $data->save();
+
+        return redirect()->route('auth.index')->with('success','Berhasil Melakukan Pendaftaran');
+
+    }
+    public function postLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required','email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+                if (Auth::user()->role == 'admin') {
+                    return redirect('/dashboard');
+                } else {
+                    return redirect()->route('auth.index')->with('error', 'email atau password salah!');
+                }
+        }
+        return redirect()->route('auth.index')->with('error', 'email atau password salah!');
     }
 
     /**

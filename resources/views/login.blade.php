@@ -18,15 +18,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/owl.carousel.min.css')}}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <style>
         .nav-bar {
             position: fixed;
@@ -70,7 +70,7 @@
                         <a href="/" class="nav-item nav-link" onclick="setActive(this)">Cek Pemesanan</a>
                         <a href="/" class="nav-item nav-link" onclick="setActive(this)">Kontak</a>
                     </div>
-                    <a href="{{route('portal.index')}}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Masuk</a>
+                    <a href="{{route('auth.index')}}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Masuk</a>
                 </div>
             </nav>
         </div>
@@ -83,17 +83,28 @@
         <div class="container col-7">
             <div class="p-5 bg-light rounded contact-form">
                 <div class="row g-4">
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+                    @if(session('error'))
+                    <div class="alert alert-danger mt-3" role="alert">
+                        {{ session('error') }}
+                    </div>
+                    @endif
                     <div class="col-12">
                         <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Login</small>
                         <h1 class="display-5 mb-0">Sudah punya akun, silakan login</h1>
                     </div>
                     <div class="col-md-12 col-lg-12">
-                        <form>
-                            <input type="email" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Email">
-                            <input type="password" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Password">
+                        <form action="{{route('auth.postLogin')}}" method="POST">
+                            @csrf
+                            <input type="email" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Email" name="email">
+                            <input type="password" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Password" name="password">
                             <div class="d-flex">
                                 <button class=" btn btn-primary form-control p-2 border-primary bg-primary m-2" type="submit" style="width:20%">Masuk</button>
-                                <p class="m-4">Belum Punya Akun? <a href="{{route('portal.register')}}"> Daftar</a></p>
+                                <p class="m-4">Belum Punya Akun? <a href="{{route('auth.register')}}"> Daftar</a></p>
                             </div>
                         </form>
                     </div>
@@ -175,15 +186,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('lib/wow/wow.min.js')}}"></script>
+    <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+    <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+    <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/main.js')}}"></script>
     <script>
         function setActive(element) {
             const navLinks = document.querySelectorAll('.navbar .navbar-nav .nav-link');

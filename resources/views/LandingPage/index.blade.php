@@ -70,7 +70,7 @@
                         <a href="#galeri" class="nav-item nav-link" onclick="setActive(this)">Cek Pemesanan</a>
                         <a href="#kontak" class="nav-item nav-link" onclick="setActive(this)">Kontak</a>
                     </div>
-                    <a href="{{route('portal.index')}}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Masuk</a>
+                    <a href="{{route('auth.index')}}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Masuk</a>
                 </div>
             </nav>
         </div>
@@ -256,78 +256,17 @@
                         <div class="row g-4">
                             <div class="col-lg-12">
                                 <div class="row g-4">
+                                    @foreach($data as $row)
                                     <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
                                         <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-1.jpg" alt="">
+                                            <img class="img-fluid rounded w-100" src="{{ Storage::url($row->foto) }}" alt="">
                                             <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Wedding</h4>
-                                                <a href="img/img-1.jpg" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                                <h4 class="me-auto">{{ $row->kategori }}</h4>
+                                                <a href="{{ Storage::url($row->foto) }}" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-1.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Graduation</h4>
-                                                <a href="img/img-1.jpg" data-lightbox="event-2" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-2.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Wedding</h4>
-                                                <a href="img/img-2.jpg" data-lightbox="event-3" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-2.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Couple</h4>
-                                                <a href="img/img-2.jpg" data-lightbox="event-4" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-3.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Graduation</h4>
-                                                <a href="img/img-3.jpg" data-lightbox="event-5" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-3.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Wedding</h4>
-                                                <a href="img/img-3.jpg" data-lightbox="event-6" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-1.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Couple</h4>
-                                                <a href="img/img-1.jpg" data-lightbox="event-7" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
-                                        <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/img-2.jpg" alt="">
-                                            <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Family</h4>
-                                                <a href="img/img-2.jpg" data-lightbox="event-17" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -336,24 +275,82 @@
                         <div class="row g-4">
                             <div class="col-lg-12">
                                 <div class="row g-4">
+                                    @foreach($data as $row)
+                                    @if($row->kategori == 'Wedding')
                                     <div class="col-md-6 col-lg-3">
                                         <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/event-1.jpg" alt="">
+                                            <img class="img-fluid rounded w-100" src="{{ Storage::url($row->foto) }}" alt="">
                                             <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Wedding</h4>
-                                                <a href="img/01.jpg" data-lightbox="event-8" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                                <h4 class="me-auto">{{ $row->kategori }}</h4>
+                                                <a href="{{ Storage::url($row->foto) }}" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-12">
+                                <div class="row g-4">
+                                    @foreach($data as $row)
+                                    @if($row->kategori == 'Graduation')
                                     <div class="col-md-6 col-lg-3">
                                         <div class="event-img position-relative">
-                                            <img class="img-fluid rounded w-100" src="img/event-2.jpg" alt="">
+                                            <img class="img-fluid rounded w-100" src="{{ Storage::url($row->foto) }}" alt="">
                                             <div class="event-overlay d-flex flex-column p-4">
-                                                <h4 class="me-auto">Wedding</h4>
-                                                <a href="img/01.jpg" data-lightbox="event-9" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                                <h4 class="me-auto">{{ $row->kategori }}</h4>
+                                                <a href="{{ Storage::url($row->foto) }}" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-4" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-12">
+                                <div class="row g-4">
+                                    @foreach($data as $row)
+                                    @if($row->kategori == 'Family')
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="event-img position-relative">
+                                            <img class="img-fluid rounded w-100" src="{{ Storage::url($row->foto) }}" alt="">
+                                            <div class="event-overlay d-flex flex-column p-4">
+                                                <h4 class="me-auto">{{ $row->kategori }}</h4>
+                                                <a href="{{ Storage::url($row->foto) }}" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-5" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-12">
+                                <div class="row g-4">
+                                    @foreach($data as $row)
+                                    @if($row->kategori == 'Couple')
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="event-img position-relative">
+                                            <img class="img-fluid rounded w-100" src="{{ Storage::url($row->foto) }}" alt="">
+                                            <div class="event-overlay d-flex flex-column p-4">
+                                                <h4 class="me-auto">{{ $row->kategori }}</h4>
+                                                <a href="{{ Storage::url($row->foto) }}" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
