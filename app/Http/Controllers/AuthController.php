@@ -53,10 +53,10 @@ class AuthController extends Controller
                 if (Auth::user()->role == 'admin') {
                     return redirect('/dashboard');
                 } else {
-                    return redirect()->route('auth.index')->with('error', 'email atau password salah!');
+                    return redirect()->route('auth.index')->with('error', 'Email atau password salah!');
                 }
         }
-        return redirect()->route('auth.index')->with('error', 'email atau password salah!');
+        return redirect()->route('auth.index')->with('error', 'Email atau password salah!');
     }
 
     /**

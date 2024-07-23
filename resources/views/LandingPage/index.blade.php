@@ -162,54 +162,20 @@
                     <h1 class="display-5 mb-5">Kami menawarkan berbagai pilihan paket untuk kebutuhan Anda</h1>
                 </div>
                 <div class="row g-4">
+                    @foreach($paket as $row)
                     <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/img-1.jpg" alt="">
+                            <img class="img-fluid rounded-top " src="{{ Storage::url($row->foto) }}" alt="">
                             <div class="team-content text-center py-3 bg-darks rounded-bottom">
-                                <h4 class="text-black">Graduation</h4>
-                                <p class="text-white mb-0">Rp 200.000</p>
+                                <h4 class="text-black">{{ $row->nama }}</h4>
+                                <p class="text-white mb-0">Rp {{ $row->harga }}</p>
                             </div>
                             <div class="team-icon d-flex flex-column justify-content-center m-4">
                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/img-2.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-darks rounded-bottom">
-                                <h4 class="text-black">Familly Plus</h4>
-                                <p class="text-white mb-0">Rp 500.000</p>
-                            </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/img-3.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-darks rounded-bottom">
-                                <h4 class="text-black">Wedding</h4>
-                                <p class="text-white mb-0">Rp 300.000</p>
-                            </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/img-1.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-darks rounded-bottom">
-                                <h4 class="text-black">Graduation</h4>
-                                <p class="text-white mb-0">Rp 200.000</p>
-                            </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pemesanan;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PemesananController extends Controller
 {
@@ -30,6 +32,7 @@ class PemesananController extends Controller
     public function store(Request $request)
     {
         $data = Pemesanan::create([
+            'user_id' => Auth::user()->id,
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'no_hp' => $request->no_hp,

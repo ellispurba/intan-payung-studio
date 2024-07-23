@@ -35,12 +35,12 @@
                             <td>{{$item->harga}}</td>
                             <td>{{$item->kategori}}</td>
                             <td>{{$item->deskripsi}}</td>
-                            <td><img src="{{ Storage::url($item->foto) }}" alt="product" width="50" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#viewImage{{ $item->galeri_id }}">
-                                <div class="modal fade" id="viewImage{{ $item->galeri_id }}" tabindex="-1" aria-labelledby="viewImageModalLabel{{ $item->galeri_id }}" aria-hidden="true">
+                            <td><img src="{{ Storage::url($item->foto) }}" alt="product" width="50" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#viewImage{{ $item->paket_id }}">
+                                <div class="modal fade" id="viewImage{{ $item->paket_id }}" tabindex="-1" aria-labelledby="viewImageModalLabel{{ $item->paket_id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="viewImageModalLabel{{ $item->galeri_id }}">Foto</h5>
+                                                <h5 class="modal-title" id="viewImageModalLabel{{ $item->paket_id }}">Foto</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">

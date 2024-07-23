@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Galeri;
+use App\Models\Paket;
 
 class LandingPageController extends Controller
 {
@@ -13,7 +14,8 @@ class LandingPageController extends Controller
     public function index()
     {
         $data=Galeri::all();
-        return view('landingPage.index',compact('data'));
+        $paket=Paket::all();
+        return view('landingPage.index',compact('data','paket'));
     }
 
     /**
